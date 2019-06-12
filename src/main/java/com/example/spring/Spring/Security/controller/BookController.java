@@ -18,11 +18,13 @@ public class BookController {
 
     @Autowired
     private IBooksService booksService;
-    @GetMapping("book/{title}")
-    public ResponseEntity<Book> getBookByTitle(@PathVariable("title") String title) {
-        Book book = booksService.getBookByTitle(title);
+
+    @GetMapping("book/{id}")
+    public ResponseEntity<Book> getBookById(@PathVariable("id") Long id) {
+        Book book = booksService.getBookById(id);
         return new ResponseEntity<Book>(book, HttpStatus.OK);
     }
+
     @GetMapping("books")
     public ResponseEntity<List<Book>> getAllBooks() {
         List<Book> list = booksService.getAllBooks();

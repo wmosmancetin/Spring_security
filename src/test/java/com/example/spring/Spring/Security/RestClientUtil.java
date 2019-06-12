@@ -25,7 +25,6 @@ public class RestClientUtil extends AbstractFakerTest{
     String base_url = "http://localhost:8080/";
     private HttpHeaders getHeaders() {
         String credential="osman:osman123";
-        //String credential="tarun:t123";
         String encodedCredential = new String(Base64.encodeBase64(credential.getBytes()));
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);

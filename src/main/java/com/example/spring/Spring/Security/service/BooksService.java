@@ -24,6 +24,11 @@ public class BooksService implements IBooksService {
     }
 
     @Override
+    public Book getBookById(Long id) {
+        return bookDAO.getBookById(id);
+    }
+
+    @Override
     public void addBook(Book book) {
         bookDAO.addBook(book);
     }
